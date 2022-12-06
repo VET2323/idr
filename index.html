@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="robotica.css">
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica</title>
+    <style>
+        * {
+            font-family: 'Patrick Hand', cursive;
+            padding: 0;
+            margin: 0;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300&display=swap');
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="h001"> Escola Irene Dias Ribeiro <br>
+        Criação de sites <br>
+        Robótica
+        </h1>
+        <div class="logo">
+            <img id="logo" src="img/logo.png" alt="">
+        </div>
+    </header>
+
+    <div class="classe">
+        <div class="umidade">
+            <div class="umi">
+                <h1>Umidade (%)</h1>
+                <div class="umid">
+                    <input id="numberProgress" type="number" placeholder="digite um número">
+                    <button onclick="go()">umidade</button>
+                </div>
+
+                <div class="box">
+                <div class="box-circle">
+                <svg>
+                <circle cx="70" cy="70"  r="70"></circle>
+                <circle id="circleProgress" cx="70" cy="70"  r="70"></circle>
+                </svg>
+                </div>
+                <div class="number"></div>
+                </div>
+            </div>
+
+
+
+        </div>
+    
+        <div class="temperatura">
+            <h1>Temperatura (ºC)</h1>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function go(){
+        var circle = document.querySelector('#circleProgress');
+        var number = document.querySelector('#numberProgress').value;
+        document.querySelector('.number').innerHTML = number + '%';
+        circle.style.strokeDashoffset = 440 - (440 * number) / 100;
+        }
+    </script>
+</body>
+</html>
